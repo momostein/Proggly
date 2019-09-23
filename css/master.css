@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto&display=swap');
+
+:root {
+	/* css variables: */
+	--background: #394a6d;
+	--border: #3c9d9b;
+	--heading: #52de97;
+	--foreground: #c0ffb3;
+}
+
+*, *::before, *::after {
+	/* Set sizing correct for everything */
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	color: var(--foreground);
+	background-color: var(--background);
+}
+
+#grid {
+	/* Content */
+	margin: 0;
+	/* CSS grid */
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+		"aside"
+		"main";
+}
+
+aside {
+	grid-area: aside;
+	padding: 0 1rem 1rem 1rem;
+	border: 2px solid var(--border);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+main {
+	grid-area: main;
+}
+
+header {
+	/* Content */
+	margin: 0;
+	padding: 1rem 2rem 1rem 1rem;
+	/* Flexbox */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--heading);
+	color: var(--background);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+h1, h2 {
+	font-family: 'Roboto', sans-serif;
+}
+
+hr {
+	border-color: var(--border);
+}
+
+.logo {
+	margin: 0;
+	border: 3px solid;
+	padding: 0.5rem;
+}
+
+[draggable=true] {
+	cursor: grab;
+}
+
+#tools {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.tool {
+	border: none;
+	color: var(--background);
+	background-color: var(--heading);
+	padding: 1rem;
+	margin: 0.5rem;
+	width: 5rem;
+	height: 5rem;
+	box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.23);
+	height: 5rem;
+}
+
+i.fas {
+	font-size: 1.5rem;
+}
+
+.tool:hover {
+	box-shadow: 0 0px 12px rgba(0, 0, 0, 0.16), 0 0px 12px rgba(0, 0, 0, 0.23);
+
+}
+
+.tool:active {
+	background-color: var(--border);
+}
+
+#instructions {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.instruction {
+	color: var(--background);
+	background-color: var(--heading);
+	padding: 0;
+	box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.23);
+	margin: 0.5rem;
+	/* grid */
+	display: grid;
+	grid-template-columns: 5rem auto 1fr 5rem;
+	grid-auto-rows: 5rem;
+	grid-template-areas:
+		"icon name settings remove";
+
+	justify-items: center;
+	align-items: center;
+
+}
+
+.instruction .icon {
+	grid-area: icon;
+}
+
+.instruction .name {
+	grid-area: name;
+}
+
+.instruction .settings {
+	grid-area: settings;
+}
+
+.instruction .remove {
+	width: 3rem;
+	height: 3rem;
+	grid-area: remove;
+	color: inherit;
+	background-color: inherit;
+	border: 3px solid var(--background);
+}
+
+.instruction .remove:hover {
+	box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.23);
+}
+
+.instruction .remove:active {
+	background-color: var(--border)
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	/* For desktop: */
+	#grid {
+		/* CSS grid */
+		display: grid;
+		grid-template-columns: 15rem 1fr;
+		grid-template-rows: auto 1fr;
+		grid-column-gap: 2rem;
+		grid-template-areas:
+			"aside main"
+			". main";
+	}
+}
+
+button:focus, a:focus {
+	outline: 3px solid var(--border);
+
+}
