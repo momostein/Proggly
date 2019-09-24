@@ -81,7 +81,7 @@ class Temperature extends Instruction {
 		super()
 		let name = document.createElement('span');
 		name.innerHTML = "Temperature:";
-
+		name.classList.add('option-name')
 		this.options.appendChild(name);
 		this.input_temp = document.createElement('input');
 		this.input_temp.type = 'number';

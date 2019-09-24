@@ -155,7 +155,6 @@ i.fas {
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
-	overflow-x: auto;
 }
 
 .instruction .options>* {
@@ -164,6 +163,8 @@ i.fas {
 
 .instruction .options>input[type=number], .instruction .options>input[type=text] {
 	flex-grow: 1;
+	width: 1rem;
+	min-width: 1rem;
 	max-width: 8rem;
 	border: 2px solid var(--background);
 	background-color: var(--foreground);
@@ -174,6 +175,10 @@ i.fas {
 	font-weight: normal;
 	text-align: right;
 	box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.23);
+}
+
+.instruction .options .option-name {
+	display: none;
 }
 
 .instruction .remove {
@@ -266,5 +271,9 @@ button:focus, a:focus {
 		grid-template-areas:
 			"aside main"
 			". main";
+	}
+
+	.instruction .options .option-name {
+		display: block;
 	}
 }
