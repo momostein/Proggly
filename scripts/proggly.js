@@ -79,11 +79,17 @@ class Instruction {
 class Temperature extends Instruction {
 	constructor() {
 		super()
-		this.options.appendChild(document.createTextNode("Temperature:"));
+		let name = document.createElement('span');
+		name.innerHTML = "Temperature:";
+
+		this.options.appendChild(name);
 		this.input_temp = document.createElement('input');
 		this.input_temp.type = 'number';
 		this.options.appendChild(this.input_temp);
-		this.options.appendChild(document.createTextNode("°C"));
+
+		let unit = document.createElement('span');
+		unit.innerHTML = "°C";
+		this.options.appendChild(unit);
 	}
 
 	get icon() {
